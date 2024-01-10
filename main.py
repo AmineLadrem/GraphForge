@@ -13,7 +13,7 @@ def create_graph():
     type_graphe = int(input("Type de graphe (0 pour non orienté, 1 pour orienté) : "))
     nombre_noeuds = int(input("Nombre de nœuds dans le graphe : "))
 
-    graphe_matrice = graph.GrapheMatrice(nombre_noeuds, oriente=(type_graphe == 1))
+    graphe_matrice = graph.GrapheListe(nombre_noeuds, oriente=(type_graphe == 1))
 
     if type_graphe == 0:
         aretes = input("Liste des arêtes (chaque arête doit être un couple de nœuds sans espace, et chaque arête séparée par une virgule) : ").split(',')
@@ -26,7 +26,7 @@ def create_graph():
             u, v = map(int, [arc[0], arc[1]])  # Split the arc string into two separate values
             graphe_matrice.ajouter_arc(u, v)
 
-    graphe_matrice.afficher_matrice()
+    graphe_matrice.afficher_liste()
     graphe_matrice.afficher_graphe()
 
 def create_menu(options):
